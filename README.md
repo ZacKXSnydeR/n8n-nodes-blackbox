@@ -27,6 +27,8 @@ npm install n8n-nodes-blackbox
 3. Search for "Blackbox AI API"
 4. Enter your API key and save
 
+**Note:** Blackbox API does not support the standard OpenAI-style health check endpoint, so credential validation has been removed. Your API key will be validated on first workflow execution.
+
 ## Supported Models
 
 This node provides access to 100+ AI models through the Blackbox API:
