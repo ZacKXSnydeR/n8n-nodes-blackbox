@@ -1,6 +1,5 @@
 import {
     IAuthenticateGeneric,
-    ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
 } from 'n8n-workflow';
@@ -26,22 +25,6 @@ export class BlackboxApi implements ICredentialType {
         properties: {
             headers: {
                 Authorization: 'Bearer {{$credentials.apiKey}}',
-            },
-        },
-    };
-
-    test: ICredentialTestRequest = {
-        request: {
-            baseURL: 'https://api.blackbox.ai',
-            url: '/chat/completions',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: {
-                model: 'blackboxai/openai/gpt-4o-mini',
-                messages: [{ role: 'user', content: 'test' }],
-                max_tokens: 1,
             },
         },
     };
